@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KrishiMitra - AI-powered Smart Crop Advisory System for Small and Marginal Farmers. Get personalized crop recommendations, pest detection, and weather alerts.">
+    <title>KrishiMitra — Smart Crop Advisory System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="leaf-icon">🌱</div>
+            <h2>KrishiMitra</h2>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" id="nav-logo">
+                <span class="logo-icon">🌾</span>
+                <span class="logo-text">Krishi<span class="logo-highlight">Mitra</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active" data-section="home"><i class="fas fa-home"></i> <span data-i18n="nav_home">Home</span></a></li>
+                <li><a href="#advisory" class="nav-link" data-section="advisory"><i class="fas fa-seedling"></i> <span data-i18n="nav_advisory">Crop Advisory</span></a></li>
+                <li><a href="#pest" class="nav-link" data-section="pest"><i class="fas fa-bug"></i> <span data-i18n="nav_pest">Pest Detection</span></a></li>
+                <li><a href="#weather" class="nav-link" data-section="weather"><i class="fas fa-cloud-sun"></i> <span data-i18n="nav_weather">Weather</span></a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="lang-toggle" class="btn-icon" title="Switch Language">
+                    <i class="fas fa-language"></i>
+                    <span id="lang-label">EN</span>
+                </button>
+                <button id="mobile-menu-btn" class="btn-icon mobile-only">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i> <span data-i18n="hero_badge">SIH 2025 — Problem Statement #25010</span>
+                </div>
+                <h1 class="hero-title" data-i18n="hero_title_html">
+                    Smart Crop Advisory for
+                    <span class="gradient-text">Every Farmer</span>
+                </h1>
+                <p class="hero-description" data-i18n="hero_desc">
+                    AI-powered, multilingual platform empowering small & marginal farmers with personalized crop recommendations, real-time pest detection, and weather-based alerts.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#advisory" class="btn btn-primary btn-lg">
+                        <i class="fas fa-seedling"></i> <span data-i18n="hero_btn_advice">Get Crop Advice</span>
+                    </a>
+                    <a href="#pest" class="btn btn-outline btn-lg">
+                        <i class="fas fa-camera"></i> <span data-i18n="hero_btn_pest">Detect Pest</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="150">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label" data-i18n="stat_crops">Crops Covered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="28">0</span>
+                        <span class="stat-label" data-i18n="stat_states">States Supported</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="12">0</span>
+                        <span class="stat-label" data-i18n="stat_langs">Languages</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span><span class="stat-suffix">K+</span>
+                        <span class="stat-label" data-i18n="stat_farmers">Farmers Helped</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-stack">
+                    <div class="floating-card card-weather">
+                        <i class="fas fa-cloud-sun"></i>
+                        <div>
+                            <span class="fc-title" data-i18n="fc_weather_title">Weather Alert</span>
+                            <span class="fc-value" data-i18n="fc_weather_val">Rain expected tomorrow</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-crop">
+                        <i class="fas fa-seedling"></i>
+                        <div>
+                            <span class="fc-title" data-i18n="fc_crop_title">Recommended</span>
+                            <span class="fc-value" data-i18n="fc_crop_val">Wheat — Rabi Season</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-pest">
+                        <i class="fas fa-shield-virus"></i>
+                        <div>
+                            <span class="fc-title" data-i18n="fc_pest_title">Pest Alert</span>
+                            <span class="fc-value" data-i18n="fc_pest_val">Aphid detected — Action needed</span>
+                        </div>
+                    </div>
+                    <div class="hero-illustration">
+                        <div class="illustration-circle"></div>
+                        <div class="illustration-plant">🌾</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span data-i18n="scroll_text">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Quick Overview -->
+    <section class="features-strip">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-mini" data-aos="fade-up">
+                    <div class="feature-mini-icon" style="--clr: #40916c"><i class="fas fa-seedling"></i></div>
+                    <h3 data-i18n="feat_advisory_title">Smart Advisory</h3>
+                    <p data-i18n="feat_advisory_desc">AI-driven crop recommendations based on soil, weather & location</p>
+                </div>
+                <div class="feature-mini" data-aos="fade-up" data-delay="100">
+                    <div class="feature-mini-icon" style="--clr: #e76f51"><i class="fas fa-bug"></i></div>
+                    <h3 data-i18n="feat_pest_title">Pest Detection</h3>
+                    <p data-i18n="feat_pest_desc">Upload crop images for instant pest & disease identification</p>
+                </div>
+                <div class="feature-mini" data-aos="fade-up" data-delay="200">
+                    <div class="feature-mini-icon" style="--clr: #219ebc"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <h3 data-i18n="feat_weather_title">Weather Alerts</h3>
+                    <p data-i18n="feat_weather_desc">Hyperlocal weather forecasts with farming impact analysis</p>
+                </div>
+                <div class="feature-mini" data-aos="fade-up" data-delay="300">
+                    <div class="feature-mini-icon" style="--clr: #9b5de5"><i class="fas fa-robot"></i></div>
+                    <h3 data-i18n="feat_chatbot_title">AI Chatbot</h3>
+                    <p data-i18n="feat_chatbot_desc">24/7 multilingual farming assistant for instant guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Advisory Section -->
+    <section id="advisory" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-seedling"></i> <span data-i18n="adv_badge">Crop Advisory</span></span>
+                <h2 class="section-title" data-i18n="adv_title_html">Personalized Crop <span class="gradient-text">Recommendations</span></h2>
+                <p class="section-desc" data-i18n="adv_desc">Tell us about your farm and get AI-powered crop suggestions tailored to your soil, climate, and season.</p>
+            </div>
+            <div class="advisory-layout">
+                <div class="advisory-form-card glass-card">
+                    <form id="crop-advisory-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state"><i class="fas fa-map-marker-alt"></i> <span data-i18n="label_state">State</span></label>
+                                <select id="state" required>
+                                    <option value="" data-i18n="opt_select_state">Select State</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="up">Uttar Pradesh</option>
+                                    <option value="mp">Madhya Pradesh</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="tamil_nadu">Tamil Nadu</option>
+                                    <option value="west_bengal">West Bengal</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="andhra_pradesh">Andhra Pradesh</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="odisha">Odisha</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="season"><i class="fas fa-calendar-alt"></i> <span data-i18n="label_season">Season</span></label>
+                                <select id="season" required>
+                                    <option value="" data-i18n="opt_select_season">Select Season</option>
+                                    <option value="kharif" data-i18n="opt_kharif">Kharif (Jun–Oct)</option>
+                                    <option value="rabi" data-i18n="opt_rabi">Rabi (Nov–Mar)</option>
+                                    <option value="zaid" data-i18n="opt_zaid">Zaid (Mar–Jun)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="soil-type"><i class="fas fa-mountain"></i> <span data-i18n="label_soil">Soil Type</span></label>
+                                <select id="soil-type" required>
+                                    <option value="" data-i18n="opt_select_soil">Select Soil Type</option>
+                                    <option value="alluvial" data-i18n="opt_alluvial">Alluvial Soil</option>
+                                    <option value="black" data-i18n="opt_black">Black (Regur) Soil</option>
+                                    <option value="red" data-i18n="opt_red">Red & Yellow Soil</option>
+                                    <option value="laterite" data-i18n="opt_laterite">Laterite Soil</option>
+                                    <option value="sandy" data-i18n="opt_sandy">Sandy / Desert Soil</option>
+                                    <option value="clay" data-i18n="opt_clay">Clay Soil</option>
+                                    <option value="loamy" data-i18n="opt_loamy">Loamy Soil</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="land-size"><i class="fas fa-expand-arrows-alt"></i> <span data-i18n="label_land">Land Size (Acres)</span></label>
+                                <input type="number" id="land-size" data-i18n-placeholder="ph_land" placeholder="e.g., 2.5" min="0.1" step="0.1" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="irrigation"><i class="fas fa-tint"></i> <span data-i18n="label_irrigation">Irrigation</span></label>
+                                <select id="irrigation" required>
+                                    <option value="" data-i18n="opt_select_irr">Select Type</option>
+                                    <option value="rainfed" data-i18n="opt_rainfed">Rainfed Only</option>
+                                    <option value="canal" data-i18n="opt_canal">Canal Irrigation</option>
+                                    <option value="tubewell" data-i18n="opt_tubewell">Tubewell / Borewell</option>
+                                    <option value="drip" data-i18n="opt_drip">Drip Irrigation</option>
+                                    <option value="sprinkler" data-i18n="opt_sprinkler">Sprinkler System</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget"><i class="fas fa-rupee-sign"></i> <span data-i18n="label_budget">Budget (₹/Acre)</span></label>
+                                <select id="budget">
+                                    <option value="low" data-i18n="opt_low">Low (&lt; ₹10,000)</option>
+                                    <option value="medium" selected data-i18n="opt_medium">Medium (₹10K–25K)</option>
+                                    <option value="high" data-i18n="opt_high">High (&gt; ₹25,000)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full" id="advisory-submit-btn">
+                            <i class="fas fa-magic"></i> <span data-i18n="btn_get_rec">Get Recommendations</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="advisory-results" id="advisory-results">
+                    <div class="results-placeholder">
+                        <div class="placeholder-illustration">
+                            <i class="fas fa-hand-point-left"></i>
+                        </div>
+                        <h3 data-i18n="adv_ph_title">Fill in your farm details</h3>
+                        <p data-i18n="adv_ph_desc">Our AI engine will analyze your inputs and recommend the best crops for maximum yield and profitability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pest Detection Section -->
+    <section id="pest" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-bug"></i> <span data-i18n="pest_badge">Pest Detection</span></span>
+                <h2 class="section-title" data-i18n="pest_title_html">AI-Powered Pest & Disease <span class="gradient-text">Identification</span></h2>
+                <p class="section-desc" data-i18n="pest_desc">Upload a photo of your affected crop and our AI will identify the pest or disease and suggest treatment options.</p>
+                <div id="ml-model-status" class="ml-model-status">
+                    <span class="ml-badge loading"><i class="fas fa-circle-notch fa-spin"></i> Loading MobileNet v2 Model...</span>
+                </div>
+            </div>
+            <div class="pest-layout">
+                <div class="upload-zone glass-card" id="upload-zone">
+                    <input type="file" id="pest-image-input" accept="image/*" hidden>
+                    <div class="upload-content" id="upload-content">
+                        <div class="upload-icon-wrapper">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3 data-i18n="upload_title">Upload Crop Image</h3>
+                        <p data-i18n="upload_subtitle">Drag & drop or click to upload</p>
+                        <span class="upload-hint" data-i18n="upload_hint">Supports JPG, PNG — Max 10MB</span>
+                        <button class="btn btn-outline" id="upload-btn">
+                            <i class="fas fa-camera"></i> <span data-i18n="upload_btn">Choose Image</span>
+                        </button>
+                    </div>
+                    <div class="upload-preview" id="upload-preview" style="display:none;">
+                        <img id="preview-img" src="" alt="Uploaded crop image">
+                        <button class="btn-remove" id="remove-image" title="Remove image">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="pest-results" id="pest-results">
+                    <div class="results-placeholder">
+                        <div class="placeholder-illustration">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <h3 data-i18n="pest_ph_title">Upload an image to analyze</h3>
+                        <p data-i18n="pest_ph_desc">Our deep learning model can detect 50+ common crop pests and diseases with high accuracy.</p>
+                        <div class="supported-crops">
+                            <span class="crop-tag">🌾 <span data-i18n="crop_wheat">Wheat</span></span>
+                            <span class="crop-tag">🌽 <span data-i18n="crop_maize">Maize</span></span>
+                            <span class="crop-tag">🍚 <span data-i18n="crop_rice">Rice</span></span>
+                            <span class="crop-tag">🥔 <span data-i18n="crop_potato">Potato</span></span>
+                            <span class="crop-tag">🍅 <span data-i18n="crop_tomato">Tomato</span></span>
+                            <span class="crop-tag">🌶️ <span data-i18n="crop_chilli">Chilli</span></span>
+                            <span class="crop-tag">🥒 <span data-i18n="crop_cucumber">Cucumber</span></span>
+                            <span class="crop-tag">🍇 <span data-i18n="crop_grape">Grape</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg" id="analyze-pest-btn" style="display:none; margin: 2rem auto;">
+                <i class="fas fa-search"></i> <span data-i18n="btn_analyze">Analyze Image</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section id="weather" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-cloud-sun"></i> <span data-i18n="weather_badge">Weather Intelligence</span></span>
+                <h2 class="section-title" data-i18n="weather_title_html">Hyperlocal Weather <span class="gradient-text">Dashboard</span></h2>
+                <p class="section-desc" data-i18n="weather_desc">Real-time weather data with farming-specific insights and alerts for your location.</p>
+            </div>
+            <div class="weather-controls">
+                <button class="btn btn-primary" id="get-location-btn">
+                    <i class="fas fa-crosshairs"></i> <span data-i18n="btn_location">Use My Location</span>
+                </button>
+                <span class="weather-or" data-i18n="or_text">or</span>
+                <div class="weather-search">
+                    <input type="text" id="city-input" data-i18n-placeholder="ph_city" placeholder="Enter city name..." class="weather-input">
+                    <button class="btn btn-primary" id="search-city-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="weather-dashboard" class="weather-dashboard" style="display: none;">
+                <div class="weather-main glass-card">
+                    <div class="weather-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="weather-city">—</span>
+                    </div>
+                    <div class="weather-current">
+                        <div class="weather-temp-group">
+                            <span class="weather-icon-large" id="weather-icon-main">☀️</span>
+                            <span class="weather-temp" id="weather-temp">—</span>
+                        </div>
+                        <div class="weather-details">
+                            <span class="weather-desc" id="weather-desc">—</span>
+                            <div class="weather-meta">
+                                <div><i class="fas fa-tint"></i> <span data-i18n="w_humidity">Humidity</span>: <span id="weather-humidity">—</span></div>
+                                <div><i class="fas fa-wind"></i> <span data-i18n="w_wind">Wind</span>: <span id="weather-wind">—</span></div>
+                                <div><i class="fas fa-eye"></i> <span data-i18n="w_visibility">Visibility</span>: <span id="weather-visibility">—</span></div>
+                                <div><i class="fas fa-compress-arrows-alt"></i> <span data-i18n="w_pressure">Pressure</span>: <span id="weather-pressure">—</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="farming-advisory-weather" id="farming-advisory-weather">
+                    </div>
+                </div>
+                <div class="weather-forecast">
+                    <h3><i class="fas fa-calendar-week"></i> <span data-i18n="w_forecast">7-Day Forecast</span></h3>
+                    <div class="forecast-grid" id="forecast-grid">
+                    </div>
+                </div>
+                <div class="weather-extras">
+                    <div class="weather-extra-card glass-card">
+                        <h4><i class="fas fa-sun"></i> <span data-i18n="w_sun">Sun Schedule</span></h4>
+                        <div class="sun-times">
+                            <div><span>🌅 <span data-i18n="w_sunrise">Sunrise</span></span><span id="sunrise">—</span></div>
+                            <div><span>🌇 <span data-i18n="w_sunset">Sunset</span></span><span id="sunset">—</span></div>
+                        </div>
+                    </div>
+                    <div class="weather-extra-card glass-card">
+                        <h4><i class="fas fa-leaf"></i> <span data-i18n="w_impact">Farming Impact</span></h4>
+                        <div id="farming-impact" class="farming-impact">
+                            <p data-i18n="w_impact_ph">Get location data to see farming impact analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="weather-loading" class="weather-loading" style="display: none;">
+                <div class="spinner"></div>
+                <p data-i18n="w_loading">Fetching weather data...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌾</span>
+                    <span class="logo-text">Krishi<span class="logo-highlight">Mitra</span></span>
+                    <p data-i18n="footer_desc">Empowering India's farmers with AI-driven agricultural intelligence. A Smart India Hackathon 2025 initiative.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4 data-i18n="footer_features">Features</h4>
+                    <ul>
+                        <li><a href="#advisory" data-i18n="nav_advisory">Crop Advisory</a></li>
+                        <li><a href="#pest" data-i18n="nav_pest">Pest Detection</a></li>
+                        <li><a href="#weather" data-i18n="feat_weather_title">Weather Alerts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4 data-i18n="footer_resources">Resources</h4>
+                    <ul>
+                        <li><a href="#" data-i18n="footer_api">API Documentation</a></li>
+                        <li><a href="#" data-i18n="footer_research">Research Papers</a></li>
+                        <li><a href="#" data-i18n="footer_schemes">Government Schemes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4 data-i18n="footer_contact">Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> team@krishimitra.in</li>
+                        <li><i class="fas fa-phone"></i> 1800-XXX-XXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_location">Punjab, India</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KrishiMitra — SIH Problem Statement #25010 | <span data-i18n="footer_org">Government of Punjab</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-toggle" class="chatbot-toggle">
+        <div class="chatbot-toggle-icon">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="chatbot-toggle-pulse"></div>
+        <span class="chatbot-label" data-i18n="chatbot_ask">Ask KrishiBot</span>
+    </div>
+
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar">🤖</div>
+                <div>
+                    <h4>KrishiBot</h4>
+                    <span class="chatbot-status"><span class="status-dot"></span> <span data-i18n="chatbot_online">Online</span></span>
+                </div>
+            </div>
+            <div class="chatbot-header-actions">
+                <button id="chatbot-clear" title="Clear chat"><i class="fas fa-trash-alt"></i></button>
+                <button id="chatbot-close" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+        </div>
+        <div class="chatbot-suggestions" id="chatbot-suggestions">
+            <button class="suggestion-chip" data-msg="Best crops for Rabi season?" data-msg-hi="रबी सीज़न की सबसे अच्छी फसलें?">🌾 <span data-i18n="chip_rabi">Rabi crops</span></button>
+            <button class="suggestion-chip" data-msg="How to detect pests in wheat?" data-msg-hi="गेहूं में कीट कैसे पहचानें?">🐛 <span data-i18n="chip_pest">Pest detection</span></button>
+            <button class="suggestion-chip" data-msg="What is the weather forecast for farming?" data-msg-hi="खेती के लिए मौसम का पूर्वानुमान क्या है?">🌦️ <span data-i18n="chip_weather">Weather tips</span></button>
+            <button class="suggestion-chip" data-msg="Government schemes for farmers" data-msg-hi="किसानों के लिए सरकारी योजनाएं">🏛️ <span data-i18n="chip_schemes">Govt schemes</span></button>
+        </div>
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" data-i18n-placeholder="chatbot_ph" placeholder="Type your farming question..." autocomplete="off">
+            <button id="chatbot-send" class="chatbot-send-btn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- TensorFlow.js + MobileNet for Real ML -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
