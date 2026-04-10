@@ -144,7 +144,13 @@ function animateCounter(el) {
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         el.textContent = Math.round(target * eased);
-        if (progress < 1) requestAnimationFrame(update);
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            // Pulse effect when counter finishes
+            el.classList.add('counted');
+            setTimeout(() => el.classList.remove('counted'), 500);
+        }
     }
     requestAnimationFrame(update);
 }
