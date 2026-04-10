@@ -1775,6 +1775,14 @@ input, select { font-family: inherit; }
     .pest-layout { grid-template-columns: 1fr; }
     .forecast-grid { grid-template-columns: repeat(4, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 32px;
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1812,9 +1820,10 @@ input, select { font-family: inherit; }
         bottom: 90px;
         max-height: 500px;
     }
-    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .hero-stats { flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
     .stat-item { min-width: 100px; }
     .hero-buttons { flex-direction: column; align-items: center; }
+    .scroll-indicator { display: none; }
 }
 
 @media (max-width: 480px) {
